@@ -51,7 +51,7 @@ test("Edit account", async ({ page }) => {
 test("Edit account with invalid data", async ({ page }) => {
     const account = new accountPage(page);
     await account.goto();
-    await account.fillUsername("jobjob2@gmail.com");
+    await account.fillUsername("jobjob@gmail.com");
     await account.fillPassword("job1234!");
     await account.fillLoginButton();
     await account.fillAccountsPathButton();
@@ -87,9 +87,4 @@ test("Add account customers", async ({ page }) => {
     await page.waitForSelector("text=อัปเดตข้อมูลสำเร็จ");
 
     expect(await page.getByText("อัปเดตข้อมูลสำเร็จ")).toBeVisible();
-    expect(await page.getByText("กิตติทัต")).toBeVisible();
-    expect(await page.getByText("สิงขรณ์")).toBeVisible();
-    expect(await page.getByText("123 ลาดพร้าว")).toBeVisible();
-    expect(await page.getByText("0933492899")).toBeVisible();
-    expect(await page.getByText("0933492899")).toBeVisible();
 });

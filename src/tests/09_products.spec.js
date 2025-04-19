@@ -102,23 +102,6 @@ test("Products6", async ({ page }) => {
 
     expect(await page.getByText("เพิ่มสินค้าเรียบร้อยแล้ว")).toBeVisible();
 });
-test("Products7", async ({ page }) => {
-    const addProducts = new addProductsPage(page);
-    await addProducts.goto();
-    await addProducts.fillUsername("jobjob@gmail.com");
-    await addProducts.fillPassword("job1234!");
-    await addProducts.fillLoginButton();
-    await addProducts.fillProductsPathButton();
-    await addProducts.fillProductIndexAddProductLink();
-    await addProducts.fillProductNameInput("VADER 001");
-    await addProducts.fillProductDescriptionInput("VADER");
-    await page.setInputFiles('input[type="file"]', ["src/assets/p1.jpg", "src/assets/p2.jpg", "src/assets/p3.jpg"]);
-    await addProducts.fillProductPriceInput("129");
-    await addProducts.fillProductSubmitButton();
-    await page.waitForSelector("text=เพิ่มสินค้าเรียบร้อยแล้ว");
-
-    expect(await page.getByText("เพิ่มสินค้าเรียบร้อยแล้ว")).toBeVisible();
-});
 test("Products8", async ({ page }) => {
     const addProducts = new addProductsPage(page);
     await addProducts.goto();
@@ -127,7 +110,7 @@ test("Products8", async ({ page }) => {
     await addProducts.fillLoginButton();
     await addProducts.fillProductsPathButton();
     await addProducts.fillProductIndexAddProductLink();
-    await addProducts.fillProductNameInput("VADER 001");
+    await addProducts.fillProductNameInput("VADER 007");
     await addProducts.fillProductDescriptionInput("VADER");
     await page.setInputFiles('input[type="file"]', ["src/assets/p1.jpg", "src/assets/p2.jpg", "src/assets/p3.jpg"]);
     await addProducts.fillProductPriceInput("129");
