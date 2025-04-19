@@ -13,7 +13,11 @@ test("Products1", async ({ page }) => {
     await addProducts.fillProductDescriptionInput("DARTH VADER DARTH VADER DARTH VADER DARTH VADER");
     await page.setInputFiles('input[type="file"]', ["src/assets/p1.jpg", "src/assets/p2.jpg", "src/assets/p3.jpg"]);
     await addProducts.fillProductPriceInput("100");
-    await addProducts.fillProductSubmitButton();});
+    await addProducts.fillProductSubmitButton();
+    await page.waitForSelector("text=เพิ่มสินค้าเรียบร้อยแล้ว");
+
+    expect(await page.getByText("เพิ่มสินค้าเรียบร้อยแล้ว")).toBeVisible();
+});
 test("Products2", async ({ page }) => {
     const addProducts = new addProductsPage(page);
     await addProducts.goto();
@@ -26,7 +30,11 @@ test("Products2", async ({ page }) => {
     await addProducts.fillProductDescriptionInput("DARTH VADER DARTH VADER DARTH VADER DARTH VADER");
     await page.setInputFiles('input[type="file"]', ["src/assets/p4.jpg", "src/assets/p5.jpg", "src/assets/p6.jpg"]);
     await addProducts.fillProductPriceInput("100");
-    await addProducts.fillProductSubmitButton();});
+    await addProducts.fillProductSubmitButton();
+    await page.waitForSelector("text=เพิ่มสินค้าเรียบร้อยแล้ว");
+
+    expect(await page.getByText("เพิ่มสินค้าเรียบร้อยแล้ว")).toBeVisible();
+});
 test("Products3", async ({ page }) => {
     const addProducts = new addProductsPage(page);
     await addProducts.goto();
@@ -40,6 +48,9 @@ test("Products3", async ({ page }) => {
     await page.setInputFiles('input[type="file"]', ["src/assets/d1.jpg", "src/assets/d2.jpg", "src/assets/d3.jpg"]);
     await addProducts.fillProductPriceInput("100");
     await addProducts.fillProductSubmitButton();
+    await page.waitForSelector("text=เพิ่มสินค้าเรียบร้อยแล้ว");
+
+    expect(await page.getByText("เพิ่มสินค้าเรียบร้อยแล้ว")).toBeVisible();
 });
 test("Products4", async ({ page }) => {
     const addProducts = new addProductsPage(page);
@@ -51,9 +62,11 @@ test("Products4", async ({ page }) => {
     await addProducts.fillProductIndexAddProductLink();
     await addProducts.fillProductNameInput("Ducky keyboard");
     await addProducts.fillProductDescriptionInput("Ducky keyboard one 2 mini 2");
-    await page.setInputFiles('input[type="file"]', ["src/assets/d4.jpg", "src/assets/d5.jpg", "src/assets/d6.jpg"]);
     await addProducts.fillProductPriceInput("100");
     await addProducts.fillProductSubmitButton();
+    await page.waitForSelector("text=เพิ่มสินค้าเรียบร้อยแล้ว");
+
+    expect(await page.getByText("เพิ่มสินค้าเรียบร้อยแล้ว")).toBeVisible();
 });
 test("Products5", async ({ page }) => {
     const addProducts = new addProductsPage(page);
@@ -68,6 +81,9 @@ test("Products5", async ({ page }) => {
     await page.setInputFiles('input[type="file"]', ["src/assets/p1.jpg", "src/assets/p2.jpg", "src/assets/p3.jpg"]);
     await addProducts.fillProductPriceInput("1590");
     await addProducts.fillProductSubmitButton();
+    await page.waitForSelector("text=เพิ่มสินค้าเรียบร้อยแล้ว");
+
+    expect(await page.getByText("เพิ่มสินค้าเรียบร้อยแล้ว")).toBeVisible();
 });
 test("Products6", async ({ page }) => {
     const addProducts = new addProductsPage(page);
@@ -82,6 +98,9 @@ test("Products6", async ({ page }) => {
     await page.setInputFiles('input[type="file"]', ["src/assets/d1.jpg", "src/assets/d2.jpg", "src/assets/d3.jpg"]);
     await addProducts.fillProductPriceInput("129");
     await addProducts.fillProductSubmitButton();
+    await page.waitForSelector("text=เพิ่มสินค้าเรียบร้อยแล้ว");
+
+    expect(await page.getByText("เพิ่มสินค้าเรียบร้อยแล้ว")).toBeVisible();
 });
 test("Products7", async ({ page }) => {
     const addProducts = new addProductsPage(page);
@@ -96,6 +115,9 @@ test("Products7", async ({ page }) => {
     await page.setInputFiles('input[type="file"]', ["src/assets/p1.jpg", "src/assets/p2.jpg", "src/assets/p3.jpg"]);
     await addProducts.fillProductPriceInput("129");
     await addProducts.fillProductSubmitButton();
+    await page.waitForSelector("text=เพิ่มสินค้าเรียบร้อยแล้ว");
+
+    expect(await page.getByText("เพิ่มสินค้าเรียบร้อยแล้ว")).toBeVisible();
 });
 test("Products8", async ({ page }) => {
     const addProducts = new addProductsPage(page);
@@ -110,4 +132,7 @@ test("Products8", async ({ page }) => {
     await page.setInputFiles('input[type="file"]', ["src/assets/p1.jpg", "src/assets/p2.jpg", "src/assets/p3.jpg"]);
     await addProducts.fillProductPriceInput("129");
     await addProducts.fillProductSubmitButton();
+    await page.waitForSelector("text=เพิ่มสินค้าเรียบร้อยแล้ว");
+
+    expect(await page.getByText("เพิ่มสินค้าเรียบร้อยแล้ว")).toBeVisible();
 });
