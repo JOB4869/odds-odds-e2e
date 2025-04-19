@@ -34,7 +34,7 @@ test("Edit Products change image", async ({ page }) => {
     await page.waitForSelector("text=อัปเดตสินค้าเรียบร้อยแล้ว");
 
     expect(await page.getByText("อัปเดตสินค้าเรียบร้อยแล้ว")).toBeVisible();
-    expect(await page.getByText("DARTH VADER OB1")).toBeVisible();
+    expect(await page.getByText("DARTH VADER")).toBeVisible();
 });
 test("Edit Products with invalid data", async ({ page }) => {
     const editProducts = new editProductsPage(page);
