@@ -26,7 +26,7 @@ test("Edit Products change image", async ({ page }) => {
     await editProducts.fillLoginButton();
     await editProducts.fillProductsPathButton();
     await editProducts.fillProductIndexEditProductLink();
-    await editProducts.fillProductNameInput("DARTH VADER OB1");
+    await editProducts.fillProductNameInput("DARTH VADER");
     await editProducts.fillProductDescriptionInput("DARTH VADER DARTH VADER DARTH VADER DARTH VADER");
     await page.setInputFiles('input[type="file"]', ["src/assets/p1.jpg", "src/assets/p2.jpg", "src/assets/p3.jpg"]);
     await editProducts.fillProductPriceInput("100");
@@ -44,7 +44,7 @@ test("Edit Products with invalid data", async ({ page }) => {
     await editProducts.fillLoginButton();
     await editProducts.fillProductsPathButton();
     await editProducts.fillProductIndexEditProductLink();
-    await editProducts.fillProductNameInput("DARTH VADER OB1");
+    await editProducts.fillProductNameInput("DARTH VADER");
     await editProducts.fillProductDescriptionInput("DARTH VADER DARTH VADER DARTH VADER DARTH VADER");
     await page.setInputFiles('input[type="file"]', ["src/assets/p1.jpg", "src/assets/p2.jpg", "src/assets/p3.jpg"]);
     await editProducts.fillProductPriceInput("qwe");
