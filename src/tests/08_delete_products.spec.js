@@ -4,7 +4,7 @@ import { deleteProductsPage } from "../pages/delete_products.page";
 test("Delete Products", async ({ page }) => {
     const deleteProducts = new deleteProductsPage(page);
     await deleteProducts.goto();
-    await deleteProducts.fillUsername("jobjab@gmail.com");
+    await deleteProducts.fillUsername("jobjob@gmail.com");
     await deleteProducts.fillPassword("job1234!");
     await deleteProducts.fillLoginButton();
     await deleteProducts.fillProductsPathButton();

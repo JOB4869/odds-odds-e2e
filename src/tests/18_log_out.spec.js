@@ -5,7 +5,7 @@ test("Log in to log out", async ({ page }) => {
     const logOut = new logOutPage(page);
     await logOut.goto();
     await page.getByRole('link', { name: '🧑' }).click();
-    await logOut.fillUserPassword("jobjab@gmail.com", "job1234!");
+    await logOut.fillUserPassword("jobjob@gmail.com", "job1234!");
     await logOut.clickLoginButton();
     await page.waitForURL("https://odds-odds-shop.onrender.com/users");
     await logOut.clickSignOutModalButton();

@@ -4,7 +4,7 @@ import { editProductsPage } from "../pages/edit_products.page";
 test("Edit Products but not change image", async ({ page }) => {
     const editProducts = new editProductsPage(page);
     await editProducts.goto();
-    await editProducts.fillUsername("jobjab@gmail.com");
+    await editProducts.fillUsername("jobjob@gmail.com");
     await editProducts.fillPassword("job1234!");
     await editProducts.fillLoginButton();
     await editProducts.fillProductsPathButton();
@@ -21,7 +21,7 @@ test("Edit Products but not change image", async ({ page }) => {
 test("Edit Products change image", async ({ page }) => {
     const editProducts = new editProductsPage(page);
     await editProducts.goto();
-    await editProducts.fillUsername("jobjab@gmail.com");
+    await editProducts.fillUsername("jobjob@gmail.com");
     await editProducts.fillPassword("job1234!");
     await editProducts.fillLoginButton();
     await editProducts.fillProductsPathButton();
@@ -39,7 +39,7 @@ test("Edit Products change image", async ({ page }) => {
 test("Edit Products with invalid data", async ({ page }) => {
     const editProducts = new editProductsPage(page);
     await editProducts.goto();
-    await editProducts.fillUsername("jobjab@gmail.com");
+    await editProducts.fillUsername("jobjob@gmail.com");
     await editProducts.fillPassword("job1234!");
     await editProducts.fillLoginButton();
     await editProducts.fillProductsPathButton();

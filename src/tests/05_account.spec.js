@@ -1,10 +1,10 @@
 import { test, expect } from "@playwright/test";
 import { accountPage } from "../pages/account.page";
 
-test.skip("Add account", async ({ page }) => {
+test("Add account", async ({ page }) => {
     const account = new accountPage(page);
     await account.goto();
-    await account.fillUsername("jobjab2@gmail.com");
+    await account.fillUsername("jobjob@gmail.com");
     await account.fillPassword("job1234!");
     await account.fillLoginButton();
     await account.fillAccountsPathButton();
@@ -27,7 +27,7 @@ test.skip("Add account", async ({ page }) => {
 test("Edit account", async ({ page }) => {
     const account = new accountPage(page);
     await account.goto();
-    await account.fillUsername("jobjab2@gmail.com");
+    await account.fillUsername("jobjob@gmail.com");
     await account.fillPassword("job1234!");
     await account.fillLoginButton();
     await account.fillAccountsPathButton();
@@ -51,7 +51,7 @@ test("Edit account", async ({ page }) => {
 test("Edit account with invalid data", async ({ page }) => {
     const account = new accountPage(page);
     await account.goto();
-    await account.fillUsername("jobjab2@gmail.com");
+    await account.fillUsername("jobjob2@gmail.com");
     await account.fillPassword("job1234!");
     await account.fillLoginButton();
     await account.fillAccountsPathButton();
@@ -69,4 +69,27 @@ test("Edit account with invalid data", async ({ page }) => {
     expect(await page.getByText("กรุณาตรวจสอบข้อมูลที่กรอก")).toBeVisible();
     expect(await page.getByText("Phone เบอร์โทรศัพท์ 10 หลัก")).toBeVisible();
     expect(await page.getByText("Prompt pay หมายเลขโทรศัพท์ 10 หลัก, หมายเลขบัตรประชาชน 13 หลัก")).toBeVisible();
+});
+test("Add account customers", async ({ page }) => {
+    const account = new accountPage(page);
+    await account.goto();
+    await account.fillUsername("nungkaozesam@gmail.com");
+    await account.fillPassword("job1234!");
+    await account.fillLoginButton();
+    await account.fillAccountsPathButton();
+    await account.fillAccountIndexAddDataButton();
+    await account.fillAccountFormFirstNameInput("กิตติทัต");
+    await account.fillAccountFormLastNameInput("สิงขรณ์");
+    await account.fillAccountFormAddressInput("123 ลาดพร้าว");
+    await account.fillAccountFormPhoneInput("0933492899");
+    await account.fillAccountFormPromptPayInput("0933492899");
+    await account.fillAccountFormSubmitButton();
+    await page.waitForSelector("text=อัปเดตข้อมูลสำเร็จ");
+
+    expect(await page.getByText("อัปเดตข้อมูลสำเร็จ")).toBeVisible();
+    expect(await page.getByText("กิตติทัต")).toBeVisible();
+    expect(await page.getByText("สิงขรณ์")).toBeVisible();
+    expect(await page.getByText("123 ลาดพร้าว")).toBeVisible();
+    expect(await page.getByText("0933492899")).toBeVisible();
+    expect(await page.getByText("0933492899")).toBeVisible();
 });

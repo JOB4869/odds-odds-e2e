@@ -1,10 +1,10 @@
 import { expect, test } from "@playwright/test";
 import { signUpPage } from "../pages/sign_up.page";
 
-test.skip("Sign up", async ({ page }) => {
+test("Sign up", async ({ page }) => {
     const signUp = new signUpPage(page);
     await signUp.goto();
-    await signUp.fillUserPassword("jobjab@gmail.com", "job1234!", "job1234!");  
+    await signUp.fillUserPassword("jobjob@gmail.com", "job1234!", "job1234!");  
     await signUp.clickSignupButton();
     await page.waitForURL("https://odds-odds-shop.onrender.com/additional_info");
 
@@ -27,7 +27,7 @@ test("Sign up with invalid email", async ({ page }) => {
 test("Sign up with invalid password", async ({ page }) => {
     const signUp = new signUpPage(page);
     await signUp.goto();
-    await signUp.fillUserPassword("jobjab@gmail.com", "job1234", "job1234");
+    await signUp.fillUserPassword("jobjob@gmail.com", "job1234", "job1234");
     await signUp.clickSignupButton();
     const errorMessage = await page.getByText('Password รหัสผ่านต้องมีความยาวระหว่าง 8-16 ตัวอักษร');
 
@@ -37,7 +37,7 @@ test("Sign up with invalid password", async ({ page }) => {
 test("Sign up with invalid confirm password", async ({ page }) => {
     const signUp = new signUpPage(page);
     await signUp.goto();
-    await signUp.fillUserPassword("jobjab@gmail.com", "job1234!", "job1234");
+    await signUp.fillUserPassword("jobjob@gmail.com", "job1234!", "job1234");
     await signUp.clickSignupButton();
     const errorMessage = await page.getByText("Password รหัสผ่านต้องมีความยาวระหว่าง 8-16 Password confirmation doesn't match Password");
 

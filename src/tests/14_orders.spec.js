@@ -4,7 +4,7 @@ import { orderPage } from "../pages/order.page";
 test("No order", async ({ page }) => {
     const order = new orderPage(page);
     await order.goto();
-    await order.fillUsername("jobjab1@gmail.com");
+    await order.fillUsername("jobjab@gmail.com");
     await order.fillPassword("job1234!");
     await order.fillLoginButton();
     await order.fillBuyNowsPathButton();
@@ -15,7 +15,7 @@ test("No order", async ({ page }) => {
 test("Order", async ({ page }) => {
     const order = new orderPage(page);
     await order.goto();
-    await order.fillUsername("jobjab@gmail.com");
+    await order.fillUsername("jobjob@gmail.com");
     await order.fillPassword("job1234!");
     await order.fillLoginButton();
     await order.fillBuyNowsPathButton();

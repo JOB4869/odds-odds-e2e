@@ -22,7 +22,7 @@ test("show password signup", async ({ page }) => {
 test("show password change password", async ({ page }) => {
     const showPassword = new showPasswordPage(page);
     await showPassword.gotoChangePassword();
-    await showPassword.fillUsername("jobjab@gmail.com");
+    await showPassword.fillUsername("jobjob@gmail.com");
     await showPassword.fillPassword("job1234!");
     await showPassword.fillLoginButton();
     await page.waitForURL("https://odds-odds-shop.onrender.com/password");

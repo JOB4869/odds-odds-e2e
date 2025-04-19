@@ -8,8 +8,8 @@ test("change password", async ({ page }) => {
     await changePassword.fillUserPassword("jobjab@gmail.com", "job1234!");
     await changePassword.clickLoginButton();
     await changePassword.clickEditPasswordPathButton();
-    await changePassword.fillChangePasswordInput("job1234!");
-    await changePassword.fillChangePasswordConfirmationInput("job1234!");
+    await changePassword.fillChangePasswordInput("job123456!");
+    await changePassword.fillChangePasswordConfirmationInput("job123456!");
     await changePassword.clickChangePasswordSubmitButton();
 
     expect(page.url()).toBe("https://odds-odds-shop.onrender.com/password");
@@ -21,7 +21,7 @@ test("change password not valid", async ({ page }) => {
     const changePassword = new changePasswordPage(page);
     await changePassword.goto();
     await page.getByRole('link', { name: '🧑' }).click();
-    await changePassword.fillUserPassword("jobjab@gmail.com", "job1234!");
+    await changePassword.fillUserPassword("jobjob@gmail.com", "job1234!");
     await changePassword.clickLoginButton();
     await changePassword.clickEditPasswordPathButton();
     await changePassword.fillChangePasswordInput("job123");
@@ -36,7 +36,7 @@ test("change password not match", async ({ page }) => {
     const changePassword = new changePasswordPage(page);
     await changePassword.goto();
     await page.getByRole('link', { name: '🧑' }).click();
-    await changePassword.fillUserPassword("jobjab@gmail.com", "job1234!");
+    await changePassword.fillUserPassword("jobjob@gmail.com", "job1234!");
     await changePassword.clickLoginButton();
     await changePassword.clickEditPasswordPathButton();
     await changePassword.fillChangePasswordInput("job1234!");

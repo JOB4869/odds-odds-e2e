@@ -4,8 +4,8 @@ import { CartPage } from "../pages/cart.page";
 test("Add product to cart", async ({ page }) => {
     const cart = new CartPage(page);
     await cart.goto();
-    await page.getByRole("link", { name: "One 2 Pro Mini 1,590 บาท" }).click();
-    await cart.fillUsername("jobjob@gmail.com");
+    await page.getByRole("link", { name: "One 2 Pro Mini 001 1,590 บาท" }).click();
+    await cart.fillUsername("nungkaozesam@gmail.com");
     await cart.fillPassword("job1234!");
     await cart.fillLoginButton();
     await cart.fillAddToCartButton();
@@ -17,12 +17,12 @@ test("Add product to cart", async ({ page }) => {
 test("Add product to cart and delete product from cart", async ({ page }) => {
     const cart = new CartPage(page);
     await cart.goto();
-    await page.getByRole("link", { name: "One 2 Pro Mini 1,590 บาท" }).click();
-    await cart.fillUsername("jobjob@gmail.com");
+    await page.getByRole("link", { name: "One 2 Pro Mini 001 1,590 บาท" }).click();
+    await cart.fillUsername("nungkaozesam@gmail.com");
     await cart.fillPassword("job1234!");
     await cart.fillLoginButton();
     await cart.fillAddToCartButton();
-    await page.getByRole("link", { name: "Obi-Wan 129 บาท" }).click();
+    await page.getByRole("link", { name: "Obi-Wan 001 129 บาท" }).click();
     await cart.fillAddToCartButton();
 
     await page.getByRole('link', { name: '🛍️' }).click();
@@ -38,12 +38,12 @@ test("Add product to cart and delete product from cart", async ({ page }) => {
 test("Add product to cart and buy products from cart but no proof of payment", async ({ page }) => {
     const cart = new CartPage(page);
     await cart.goto();
-    await page.getByRole("link", { name: "One 2 Pro Mini 1,590 บาท" }).click();
-    await cart.fillUsername("jobjob@gmail.com");
+    await page.getByRole("link", { name: "One 2 Pro Mini 001 1,590 บาท" }).click();
+    await cart.fillUsername("nungkaozesam@gmail.com");
     await cart.fillPassword("job1234!");
     await cart.fillLoginButton();
     await cart.fillAddToCartButton();
-    await page.getByRole("link", { name: "Obi-Wan 129 บาท" }).click();
+    await page.getByRole("link", { name: "Obi-Wan 001 129 บาท" }).click();
     await cart.fillAddToCartButton();
 
     await page.getByRole('link', { name: '🛍️' }).click();
@@ -60,12 +60,12 @@ test("Add product to cart and buy products from cart but no proof of payment", a
 test("Add product to cart and buy products from cart for current address", async ({ page }) => {
     const cart = new CartPage(page);
     await cart.goto();
-    await page.getByRole("link", { name: "One 2 Pro Mini 1,590 บาท" }).click();
-    await cart.fillUsername("jobjob@gmail.com");
+    await page.getByRole("link", { name: "One 2 Pro Mini 001 1,590 บาท" }).click();
+    await cart.fillUsername("nungkaozesam@gmail.com");
     await cart.fillPassword("job1234!");
     await cart.fillLoginButton();
     await cart.fillAddToCartButton();
-    await page.getByRole("link", { name: "Obi-Wan 129 บาท" }).click();
+    await page.getByRole("link", { name: "Obi-Wan 001 129 บาท" }).click();
     await cart.fillAddToCartButton();
 
     await page.getByRole('link', { name: '🛍️' }).click();
@@ -83,8 +83,8 @@ test("Add product to cart and buy products from cart for current address", async
 test("Add product to cart and buy products from cart for tipco address", async ({ page }) => {
     const cart = new CartPage(page);
     await cart.goto();
-    await page.getByRole("link", { name: "DARTH VADER DARTH VADER DARTH" }).click();
-    await cart.fillUsername("jobjob@gmail.com");
+    await page.getByRole("link", { name: "VADER 001" }).click();
+    await cart.fillUsername("nungkaozesam@gmail.com");
     await cart.fillPassword("job1234!");
     await cart.fillLoginButton();
     await cart.fillAddToCartButton();

@@ -4,7 +4,7 @@ import { customersPage } from "../pages/customers.page";
 test("Customers", async ({ page }) => {
     const customers = new customersPage(page);
     await customers.goto();
-    await customers.fillUsername("jobjab2@gmail.com");
+    await customers.fillUsername("jobjob@gmail.com");
     await customers.fillPassword("job1234!");
     await customers.fillLoginButton();
     await customers.fillProductsPathButton();
@@ -16,7 +16,7 @@ test("Customers", async ({ page }) => {
 test("No customers", async ({ page }) => {
     const customers = new customersPage(page);
     await customers.goto();
-    await customers.fillUsername("jobjab@gmail.com");
+    await customers.fillUsername("nungkaaozesam@gmail.com");
     await customers.fillPassword("job1234!");
     await customers.fillLoginButton();
     await customers.fillProductsPathButton();

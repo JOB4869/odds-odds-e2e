@@ -4,7 +4,7 @@ import { addProductsPage } from "../pages/add_products.page";
 test("Add Products", async ({ page }) => {
     const addProducts = new addProductsPage(page);
     await addProducts.goto();
-    await addProducts.fillUsername("jobjab@gmail.com");
+    await addProducts.fillUsername("jobjob@gmail.com");
     await addProducts.fillPassword("job1234!");
     await addProducts.fillLoginButton();
     await addProducts.fillProductsPathButton();
@@ -22,7 +22,7 @@ test("Add Products", async ({ page }) => {
 test("Add Products with invalid data", async ({ page }) => {
     const addProducts = new addProductsPage(page);
     await addProducts.goto();
-    await addProducts.fillUsername("jobjab@gmail.com");
+    await addProducts.fillUsername("jobjob@gmail.com");
     await addProducts.fillPassword("job1234!");
     await addProducts.fillLoginButton();
     await addProducts.fillProductsPathButton();

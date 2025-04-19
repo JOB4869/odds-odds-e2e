@@ -4,8 +4,8 @@ import { showProductsPage } from "../pages/show_products.page";
 test("Show My Products", async ({ page }) => {
     const showProducts = new showProductsPage(page);
     await showProducts.goto();
-    await page.getByRole('link', { name: 'DARTH VADER 100 บาท' }).click();
-    await showProducts.fillUsername("jobjab@gmail.com");
+    await page.getByRole('link', { name: 'VADER 001 129 บาท' }).click();
+    await showProducts.fillUsername("jobjob@gmail.com");
     await showProducts.fillPassword("job1234!");
     await showProducts.fillLoginButton();
 
@@ -16,8 +16,8 @@ test("Show My Products", async ({ page }) => {
 test("Products sold out", async ({ page }) => {
     const showProducts = new showProductsPage(page);
     await showProducts.goto();
-    await page.getByRole('link', { name: 'Key caps One 3 Pro Mini 199 บาท' }).click();
-    await showProducts.fillUsername("jobjab@gmail.com");
+    await page.getByRole('link', { name: 'Darth Vader Darth Vader Darth' }).click();
+    await showProducts.fillUsername("nungkaozesam@gmail.com");
     await showProducts.fillPassword("job1234!");
     await showProducts.fillLoginButton();
 
@@ -27,8 +27,8 @@ test("Products sold out", async ({ page }) => {
 test("Show Products", async ({ page }) => {
     const showProducts = new showProductsPage(page);
     await showProducts.goto();
-    await page.getByRole('link', { name: 'One 3 Pro Mini Nazca Line 299 บาท' }).click();
-    await showProducts.fillUsername("jobjab@gmail.com");
+    await page.getByRole('link', { name: 'One 2 Pro Mini 001 1,590 บาท' }).click();
+    await showProducts.fillUsername("nungkaozesam@gmail.com");
     await showProducts.fillPassword("job1234!");
     await showProducts.fillLoginButton();
 
